@@ -52,7 +52,7 @@
       }),
       methods: _objectSpread({}, ui_vue3_pinia.mapActions(counterStore, ['increaseCounter', 'decreaseCounter', 'resetCounter'])),
       // language=Vue
-      template: "\n\t\t<div class=\"demo-header\">{{$Bitrix.Loc.getMessage('DEMO_PINIA_TITLE')}}</div>\n\t\t<div>\n\t\t\t<div>{{ $Bitrix.Loc.getMessage('DEMO_PINIA_COUNTER', {'#COUNTER#': this.counter, '#DOUBLE#': this.double}) }}</div> \n\t\t\t<div>{{ $Bitrix.Loc.getMessage('DEMO_PINIA_LAST_ACTION', {'#COUNTER#': this.lastAction}) }}</div> \n\t\t\t<div>\n\t\t\t\t<button @click=\"increaseCounter\">+</button>\n\t\t\t\t<button @click=\"decreaseCounter\">-</button>\n\t\t\t</div>\n\t\t</div>\n\t"
+      template: "\n        <div class=\"demo-header\">{{$Bitrix.Loc.getMessage('DEMO_PINIA_TITLE')}}</div>\n        <div>\n            <div>{{ $Bitrix.Loc.getMessage('DEMO_PINIA_COUNTER', {'#COUNTER#': this.counter, '#DOUBLE#': this.double}) }}</div> \n            <div>{{ $Bitrix.Loc.getMessage('DEMO_PINIA_LAST_ACTION', {'#COUNTER#': this.lastAction}) }}</div> \n            <div>\n                <button @click=\"increaseCounter\">+</button>\n                <button @click=\"decreaseCounter\">-</button>\n            </div>\n        </div>\n    "
     };
 
     function _classPrivateFieldInitSpec(obj, privateMap, value) { _checkPrivateRedeclaration(obj, privateMap); privateMap.set(obj, value); }

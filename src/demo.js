@@ -11,39 +11,34 @@ import { Application } from './components/application';
 import { createPinia, setActivePinia } from 'ui.vue3.pinia';
 import { counterStore } from './stores/counter';
 
-export class PiniaDemo
-{
+export class PiniaDemo {
 
-	#store;
-	#rootNode
-	#application;
+    #store;
+    #rootNode
+    #application;
 
-	constructor(rootNode): void
-	{
-		this.#store = createPinia();
-		this.#rootNode = document.querySelector(rootNode);
-	}
+    constructor(rootNode): void {
+        this.#store = createPinia();
+        this.#rootNode = document.querySelector(rootNode);
+    }
 
-	start(): void
-	{
-		this.#application = BitrixVue.createApp({
-			name: 'Pinia Application',
-			components: {
-				Application
-			},
-			template: '<Application/>'
-		})
-		this.#application.use(this.#store);
-		this.#application.mount(this.#rootNode);
-	}
+    start(): void {
+        this.#application = BitrixVue.createApp({
+            name: 'Pinia Application',
+            components: {
+                Application
+            },
+            template: '<Application/>'
+        })
+        this.#application.use(this.#store);
+        this.#application.mount(this.#rootNode);
+    }
 
-	initStorageBeforeStartApplication(): void
-	{
-		setActivePinia(this.#store);
-	}
+    initStorageBeforeStartApplication(): void {
+        setActivePinia(this.#store);
+    }
 
-	getCounterStore(): Object
-	{
-		return counterStore;
-	}
+    getCounterStore(): Object {
+        return counterStore;
+    }
 }
